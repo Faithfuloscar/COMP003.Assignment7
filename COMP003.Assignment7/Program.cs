@@ -14,12 +14,12 @@ namespace COMP003.Assignment7
             SectionSeparator();
             Console.WriteLine("Array - CharacterCounter Section");
             SectionSeparator();
-            Console.Write("Please enter a letter");
+            Console.Write("Please enter a letter: ");
             char userChar = Convert.ToChar(Console.ReadLine());
             Console.Write("Please enter a word:");
             string userWord = Console.ReadLine();
             int charCount = CharacterCounter(userChar, userWord);
-            Console.WriteLine($"Character '{userChar}' appears in the word '{userWord}' {charCount} times.");
+            Console.WriteLine($"There are '{charCount}' letter '{userChar}' in the word '{userWord}'.");
             SectionSeparator();
 
 
