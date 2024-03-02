@@ -14,13 +14,28 @@ namespace COMP003.Assignment7
             SectionSeparator();
             Console.WriteLine("Array - CharacterCounter Section");
             SectionSeparator();
-            Console.Write("Please enter a letter: ");
+            Console.WriteLine("Please enter a letter: ");
             char userChar = Convert.ToChar(Console.ReadLine());
-            Console.Write("Please enter a word:");
+            Console.Write("");
+            Console.WriteLine("Please enter a word: ");
             string userWord = Console.ReadLine();
+            Console.Write("");
             int charCount = CharacterCounter(userChar, userWord);
             Console.WriteLine($"There are '{charCount}' letter '{userChar}' in the word '{userWord}'.");
+
+            // Array IsPalindrome Section
             SectionSeparator();
+            Console.WriteLine("Array - IsPalindrome Section");
+            SectionSeparator();
+            Console.WriteLine("");
+            Console.WriteLine("PLease enter a word to check if it is a palindrom");
+            Console.Write("");
+            string palindromeInput = Console.ReadLine();
+            bool isPalindrome = IsPalindrome(palindromeInput);
+            Console.WriteLine($"Is the word {palindromeInput} palindrome: {isPalindrome}");
+            
+
+            // List - Add Section
 
 
 
@@ -45,6 +60,16 @@ namespace COMP003.Assignment7
                 }
             }
             return count;
+        }
+
+        static bool IsPalindrome(string word)
+        {
+            string reversedWord = "";
+            for (int i = word.Length - 1; i >= 0; i--)
+            {
+                reversedWord += word[i];
+            }
+            return word.ToLower() == reversedWord.ToLower();
         }
     }
 }
