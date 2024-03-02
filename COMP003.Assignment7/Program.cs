@@ -12,7 +12,7 @@ namespace COMP003.Assignment7
         {
             // Array CharacterCounter Section
             SectionSeparator();
-            Console.WriteLine("Array - CharacterCounter Section");
+            CenteredConsoleWriteLine("Array - CharacterCounter Section");
             SectionSeparator();
             Console.WriteLine("Please enter a letter: ");
             char userChar = Convert.ToChar(Console.ReadLine());
@@ -25,7 +25,7 @@ namespace COMP003.Assignment7
 
             // Array IsPalindrome Section
             SectionSeparator();
-            Console.WriteLine("Array - IsPalindrome Section");
+            CenteredConsoleWriteLine("Array - IsPalindrome Section");
             SectionSeparator();
             Console.WriteLine("");
             Console.WriteLine("PLease enter a word to check if it is a palindrom");
@@ -37,7 +37,7 @@ namespace COMP003.Assignment7
 
             // List - Add Section
             SectionSeparator();
-            Console.WriteLine("List - Add Section");
+            CenteredConsoleWriteLine("List - Add Section");
             SectionSeparator();
             Console.WriteLine("");
             List<string> names = new List<string>();
@@ -57,13 +57,13 @@ namespace COMP003.Assignment7
 
             // List - Traversal Section
             SectionSeparator();
-            Console.WriteLine("List - Traversal Section");
+            CenteredConsoleWriteLine("List - Traversal Section");
             SectionSeparator();
             TraverseList(names);
 
             // List - Reverse Traversal Section
             SectionSeparator();
-            Console.WriteLine("List - Reverse Traversal Section");
+            CenteredConsoleWriteLine("List - Reverse Traversal Section");
             SectionSeparator();
             TraverseListReverse(names);
 
@@ -114,6 +114,17 @@ namespace COMP003.Assignment7
             {
                 Console.WriteLine(list[i]);
             }
+        }
+
+        static void CenteredConsoleWriteLine(string text)
+        {
+            int screenWidth = Console.WindowWidth;
+            int textWidth = text.Length;
+
+            int leftMargin =(screenWidth - textWidth) / 10;
+
+            Console.SetCursorPosition(leftMargin, Console.CursorTop);
+            Console.WriteLine(text);
         }
     }
 }
